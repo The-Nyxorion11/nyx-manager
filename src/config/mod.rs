@@ -1,2 +1,1 @@
-pub mod file_confing;
-pub mod read_config;
+pub mod file_config;
