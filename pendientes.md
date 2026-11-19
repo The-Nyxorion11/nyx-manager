@@ -1,0 +1,2 @@
+-hacer un sistema de comandos igual al init de git para que detecte cada server 
+-conectar lo que ya llevo
