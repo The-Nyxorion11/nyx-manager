@@ -1,0 +1,1 @@
+const API_MODRINTH: &str = "https://api.modrinth.com/v2/search?query={}";
