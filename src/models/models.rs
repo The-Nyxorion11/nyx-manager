@@ -6,30 +6,38 @@ use std::collections::HashMap;
 */
 #[derive(Deserialize, Debug)]
 pub struct SearchResponse {
-    hits: Vec<ProjectHit>,
+    pub hits: Vec<ProjectHit>,
 }
 
 #[derive(Deserialize, Debug)]
 pub struct ProjectHit {
-    project_id: String,
-    title: String,
-    slug: String,
+    pub project_id: String,
+    pub title: String,
+    pub slug: String,
 }
 
 // struct for the response of the version endpoint
-#[derive(Deserialize, Debug)]
+#[derive(Debug, Clone, Deserialize)]
+pub struct VersionFile {
+    pub url: String,
+    pub filename: String,
+    #[serde(default)]
+    pub primary: bool,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+pub struct ModrinthDependency {
+    pub project_id: Option<String>,
+    pub version_id: Option<String>,
+    pub dependency_type: String,
+}
+
+#[derive(Debug, Clone, Deserialize)]
 pub struct VersionResponse {
-    files: Vec<ModFile>,
+    pub files: Vec<VersionFile>,
+    #[serde(default)]
+    pub dependencies: Vec<ModrinthDependency>,
 }
-
-#[derive(Deserialize, Debug)]
-pub struct ModFile {
-    url: String,
-    filename: String,
-    primary: bool,
-}
-
-
 /*
     NYX-CONFIG STRUCTS
 */

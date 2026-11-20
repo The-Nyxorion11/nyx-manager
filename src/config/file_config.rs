@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 use std::fs;
-use std::path::Path;
 use crate::utils::utils::get_path;
 use crate::models::models::{NyxConfig, Config, LoaderConfig};
 

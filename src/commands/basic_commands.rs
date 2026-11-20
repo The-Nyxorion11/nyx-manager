@@ -35,10 +35,10 @@ pub fn engine_commands(){
             println!("Initializing nyx-manager at: {server_path}");
         }
         Commands::Run => {
-            println!("Downolading...");
+            
         }
         Commands::Update { type_ } => {
-            println!("Updating: {type_}");
+            
         }
     }
 }
